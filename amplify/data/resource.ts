@@ -14,7 +14,8 @@ const schema = a.schema({
       done: a.boolean(),
       priority: a.enum(['high', 'medium', 'low'])
     })
-    .authorization([a.allow.owner(), a.allow.public().to(['read'])]),
+    .authorization([a.allow.owner()]),
+    //.authorization([a.allow.owner(), a.allow.public().to(['read'])]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
